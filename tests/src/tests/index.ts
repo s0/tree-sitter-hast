@@ -4,7 +4,7 @@ import * as path from 'path';
 import * as Parser from 'tree-sitter';
 import {promisify} from 'util';
 
-import {loadLanguagesFromPackage, highlightTree} from 'tree-sitter-hast';
+import {loadLanguagesFromPackage, highlightText, highlightTree} from 'tree-sitter-hast';
 
 import * as basicTypescript from '../data/basic-typescript';
 import * as typescript from '../data/typescript';
@@ -21,6 +21,41 @@ const TEST_CASES = [
 ];
 
 describe('main tests', () => {
+  it('highlightText(language: PreparedLanguage, text: string)', async () => {
+    const testCase = basicTypescript;
+    const langs = await loadLanguagesFromPackage(testCase.language.package);
+
+    const lang = langs.get(testCase.language.lang);
+    if (!lang) throw new Error(`Invalid Language ${testCase.language.lang}, available languages are: ${Array.from(langs.keys())}`);
+
+    const highlighted = highlightText(lang, testCase.text);
+
+    // Load expected result
+    const jsonPath = path.join(DATA_DIR, testCase.result);
+    const json = await readFile(jsonPath, 'utf8');
+    const expected = JSON.parse(json);
+
+    assert.deepEqual(highlighted, expected);
+  });
+  it('highlightText(parser: Parser, scopeMappings: any, text: string)', async () => {
+    const testCase = basicTypescript;
+    const langs = await loadLanguagesFromPackage(testCase.language.package);
+
+    const lang = langs.get(testCase.language.lang);
+    if (!lang) throw new Error(`Invalid Language ${testCase.language.lang}, available languages are: ${Array.from(langs.keys())}`);
+
+    const parser = new Parser();
+    parser.setLanguage(lang.grammar);
+
+    const highlighted = highlightText(parser, lang.scopeMappings, testCase.text);
+
+    // Load expected result
+    const jsonPath = path.join(DATA_DIR, testCase.result);
+    const json = await readFile(jsonPath, 'utf8');
+    const expected = JSON.parse(json);
+
+    assert.deepEqual(highlighted, expected);
+  });
   for (const testCase of TEST_CASES) {
     it(testCase.name, async () => {
       const langs = await loadLanguagesFromPackage(testCase.language.package);

@@ -66,7 +66,7 @@ export function highlightText(arg1: PreparedLanguage | Parser, arg2: any, arg3?:
   const {parser, scopeMappings, text} = (() => {
     if (isParser(arg1)) {
       if (arg3)
-        return {parser: arg1, scopeMapping: arg2, text: arg3};
+        return {parser: arg1, scopeMappings: arg2, text: arg3};
     } else if (arg1.grammar && arg1.scopeMappings && typeof arg2 === 'string') {
       const parser = new Parser();
       parser.setLanguage(arg1.grammar);
