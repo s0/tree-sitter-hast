@@ -1,6 +1,6 @@
 # tree-sitter-hast
 
-[![](https://img.shields.io/npm/v/tree-sitter-hast.svg)](https://www.npmjs.com/package/tree-sitter-hast)
+[![Build Status](https://dev.azure.com/samlanning/tree-sitter/_apis/build/status/samlanning.tree-sitter-hast?branchName=master)](https://dev.azure.com/samlanning/tree-sitter/_build/latest?definitionId=2&branchName=master) [![](https://img.shields.io/npm/v/tree-sitter-hast.svg)](https://www.npmjs.com/package/tree-sitter-hast)
 
 NPM package to convert [`tree-sitter`](https://tree-sitter.github.io/) parsed syntax trees to syntax-highlighted [`hast`](https://github.com/syntax-tree/hast) (Hypertext Abstract Syntax Trees).
 
