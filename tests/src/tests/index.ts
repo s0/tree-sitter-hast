@@ -1,11 +1,17 @@
 import * as assert from 'assert';
 import * as Parser from 'tree-sitter';
 
-import * as d001 from '../data/001';
+import * as basicTypescript from '../data/basic-typescript';
+import * as typescript from '../data/typescript';
+import * as whitespace from '../data/whitespace';
 
 import {loadLanguagesFromPackage, highlightTree} from 'tree-sitter-hast';
 
-const TEST_CASES = [d001];
+const TEST_CASES = [
+  basicTypescript,
+  typescript,
+  whitespace
+];
 
 describe('main tests', () => {
   for (const testCase of TEST_CASES) {
@@ -13,7 +19,7 @@ describe('main tests', () => {
       const langs = await loadLanguagesFromPackage(testCase.language.package);
 
       const lang = langs.get(testCase.language.lang);
-      if (!lang) throw new Error('Invalid Language');
+      if (!lang) throw new Error(`Invalid Language ${testCase.language.lang}, available languages are: ${Array.from(langs.keys())}`);
 
       const parser = new Parser();
       parser.setLanguage(lang.grammar);
