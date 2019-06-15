@@ -174,6 +174,40 @@ treeSitterHast
 }
 ```
 
+### Exporting HTML
+
+From this point, converting the HAST to an HTML can be done in a single call using `hast-util-to-html` (part of `rehype`):
+
+```bash
+npm install hast-util-to-html tree-sitter-hast @atom-languages/language-typescript
+```
+
+[`examples/example-3.js`](examples/example-3.js)
+```js
+const toHtml = require('hast-util-to-html');
+const Parser = require('tree-sitter');
+const treeSitterHast = require('tree-sitter-hast');
+
+const text = 'let v = 3';
+
+treeSitterHast
+  .loadLanguagesFromPackage('@atom-languages/language-typescript')
+  .then(languages => {
+    const ts = languages.get('typescript');
+    const parser = new Parser();
+    parser.setLanguage(ts.grammar);
+    const tree = parser.parse(text);
+    const highlighted = treeSitterHast.highlightTree(ts.scopeMappings, text, tree);
+
+    // stringify to HTML
+    console.log(toHtml(highlighted));
+});
+```
+
+**Output:**
+```html
+<span class=""><span class="source ts"><span class="storage type">let</span> v <span class="keyword operator js">=</span> <span class="constant numeric">3</span></span></span>
+```
 
 ## TODO
 
