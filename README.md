@@ -133,7 +133,7 @@ treeSitterHast
 ```
 
 **Output:**
-```json
+```js
 {
   "type": "element",
   "tagName": "span",
