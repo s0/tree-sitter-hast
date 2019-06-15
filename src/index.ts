@@ -1,2 +1,1 @@
-console.log("hello world");
-
+export {PreparedLanguage, PreparedLanguages, loadLanguagesFromPackage} from './prepare-language';
