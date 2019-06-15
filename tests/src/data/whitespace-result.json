@@ -1,9 +1,6 @@
 {
   "type": "element",
   "tagName": "span",
-  "properties": {
-    "className": []
-  },
   "children": [
     {
       "type": "text",
@@ -12,33 +9,33 @@
     {
       "type": "element",
       "tagName": "span",
-      "properties": {
-        "className": [
-          "source",
-          "ts"
-        ]
-      },
       "children": [
         {
           "type": "element",
           "tagName": "span",
+          "children": [
+            {
+              "type": "text",
+              "value": "foo"
+            }
+          ],
           "properties": {
             "className": [
               "entity",
               "name",
               "function"
             ]
-          },
-          "children": [
-            {
-              "type": "text",
-              "value": "foo"
-            }
-          ]
+          }
         },
         {
           "type": "element",
           "tagName": "span",
+          "children": [
+            {
+              "type": "text",
+              "value": "("
+            }
+          ],
           "properties": {
             "className": [
               "punctuation",
@@ -48,17 +45,17 @@
               "bracket",
               "round"
             ]
-          },
-          "children": [
-            {
-              "type": "text",
-              "value": "("
-            }
-          ]
+          }
         },
         {
           "type": "element",
           "tagName": "span",
+          "children": [
+            {
+              "type": "text",
+              "value": ")"
+            }
+          ],
           "properties": {
             "className": [
               "punctuation",
@@ -68,19 +65,19 @@
               "bracket",
               "round"
             ]
-          },
-          "children": [
-            {
-              "type": "text",
-              "value": ")"
-            }
-          ]
+          }
         },
         {
           "type": "text",
           "value": "\n    \n\n"
         }
-      ]
+      ],
+      "properties": {
+        "className": [
+          "source",
+          "ts"
+        ]
+      }
     }
   ]
 }

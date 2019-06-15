@@ -28,14 +28,13 @@ export function highlightTree(scopeMappings: any, text: string, tree: Tree): Ele
     highlight.sexp,
     (name, children) => {
       const className = name.split('.').slice(1);
-      return {
+      const hast: Element = {
         type: 'element',
         tagName: 'span',
-        properties: {
-          className
-        },
         children
       };
+      if (className.length > 0) hast.properties = { className };
+      return hast;
     },
     value => ({type: 'text', value}));
 }
