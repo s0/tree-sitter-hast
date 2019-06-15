@@ -68,9 +68,9 @@ treeSitterHast
 
 Highlighting is made available through the following functions:
 
-* `highlightText(language, text)` - highlight some plain text, using a language that's been made available by `loadLanguagesFromPackage`
-* `highlightText(parser, scopeMappings, text)` - highlight some plain text, and use a `Parser` that's already been prepared
-* `highlightTree(scopeMappings, text, tree)` - highlight a tree that's already been parsed by `tree-sitter`
+* `highlightText(language, text, [options])` - highlight some plain text, using a language that's been made available by `loadLanguagesFromPackage`
+* `highlightText(parser, scopeMappings, text, [options])` - highlight some plain text, and use a `Parser` that's already been prepared
+* `highlightTree(scopeMappings, text, tree, [options])` - highlight a tree that's already been parsed by `tree-sitter`
 
 #### Example
 
@@ -189,10 +189,7 @@ treeSitterHast
   .loadLanguagesFromPackage('@atom-languages/language-typescript')
   .then(languages => {
     const ts = languages.get('typescript');
-    const parser = new Parser();
-    parser.setLanguage(ts.grammar);
-    const tree = parser.parse(text);
-    const highlighted = treeSitterHast.highlightTree(ts.scopeMappings, text, tree);
+    const highlighted = treeSitterHast.highlightText(ts, text);
 
     // stringify to HTML
     console.log(toHtml(highlighted));
@@ -202,6 +199,41 @@ treeSitterHast
 **Output:**
 ```html
 <span class="source ts"><span class="storage type">let</span> v <span class="keyword operator js">=</span> <span class="constant numeric">3</span></span>
+```
+
+### Whitelisting Classes
+
+Sometimes including the full list of classes applied by the scope mappings can be too much,
+and you'd like to only include those that you have stylesheets for.
+
+To do this, you can pass in a `classWhitelist` via the options parameters to `highlightText` or `highlightTree`.
+
+```bash
+npm install hast-util-to-html tree-sitter-hast @atom-languages/language-typescript
+```
+
+[`examples/example-4.js`](examples/example-4.js)
+```js
+const toHtml = require('hast-util-to-html');
+const Parser = require('tree-sitter');
+const treeSitterHast = require('tree-sitter-hast');
+
+const text = 'let v = 3';
+
+treeSitterHast
+  .loadLanguagesFromPackage('@atom-languages/language-typescript')
+  .then(languages => {
+    const ts = languages.get('typescript');
+    const highlighted = treeSitterHast.highlightText(ts, text, {classWhitelist: ['storage', 'numeric']});
+
+    // stringify to HTML
+    console.log(toHtml(highlighted));
+});
+```
+
+**Output:**
+```html
+<span><span class="storage">let</span> v = <span class="numeric">3</span></span>
 ```
 
 ## TODO
