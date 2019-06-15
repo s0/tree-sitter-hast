@@ -6,6 +6,20 @@ NPM package to convert [`tree-sitter`](https://tree-sitter.github.io/) parsed sy
 
 The main reason for this is so that tree-sitter can be used to syntax-highlight code in [`unified`](https://unified.js.org/) projects such as [`remark`](https://github.com/remarkjs/remark) or [`rehype`](https://github.com/rehypejs/rehype). Via plugins such as [`remark-tree-sitter`](https://github.com/samlanning/remark-tree-sitter).
 
+## Installation
+
+```bash
+npm install tree-sitter-hast
+```
+
+or
+
+```bash
+yarn add tree-sitter-hast
+```
+
+`tree-sitter-hast` is written in TypeScript and includes type definitions, so there is no need to install a separate `@types/tree-sitter-hast` package.
+
 ## TODO
 
 * Move prepare-language.ts over to highlight-tree-sitter
