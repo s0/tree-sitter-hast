@@ -58,7 +58,7 @@ export async function loadLanguagesFromPackage(packageName: string): Promise<Pre
   // Required for when package symlinks are used
   // (add these to the start though so they are used first)
   if (require.main) {
-    for (let i = require.main.paths.length - 1; i > 0; i--) {
+    for (let i = require.main.paths.length - 1; i >= 0; i--) {
       const path = require.main.paths[i];
       if (lookup_paths.indexOf(path) === -1)
         lookup_paths.unshift(path);
