@@ -31,10 +31,12 @@
   "dependencies": {
     "@types/cson": "^0.0.31",
     "@types/node": "^12.0.8",
+    "@types/node-sass": "^4.11.0",
     "cson": "^5.1.0",
     "highlight-tree-sitter": "^1.0.0",
-    "language-javascript": "^0.128.0-0",
+    "node-sass": "^4.12.0",
     "tree-sitter": "^0.15.5",
+    "tree-sitter-css": "^0.13.7",
     "tree-sitter-javascript": "^0.15.0",
     "unist-util-visit": "^1.4.1"
   }
