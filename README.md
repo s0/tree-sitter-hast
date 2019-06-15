@@ -9,8 +9,6 @@ The main reason for this is so that tree-sitter can be used to syntax-highlight 
 ## TODO
 
 * Move prepare-language.ts over to highlight-tree-sitter
-* Clean up examples and move out of package
-* Add tests
 * Flesh out documentation
 * Add LGTM and Azure
 * Pull out HAST type definitions into own repo (DefinitelyTyped?)
