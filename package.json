@@ -1,7 +1,7 @@
 {
-  "name": "remark-tree-sitter",
+  "name": "tree-sitter-hast",
   "version": "0.0.1",
-  "description": "A remark + rehype plugin using tree-sitter to syntax-highlight code snippets",
+  "description": "Convert tree-sitter parsed trees to HAST",
   "license": "MIT",
   "main": "index.js",
   "types": "index.d.js",
