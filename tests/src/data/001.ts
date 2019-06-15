@@ -1,0 +1,224 @@
+export const name = 'Basic Typescript';
+
+export const language = {
+  package: '@atom-languages/language-typescript',
+  lang: 'typescript'
+};
+
+export const text = `
+function foo() {
+  return 1;
+}`;
+
+/* tslint:disable:quotemark */
+export const result = {
+  "type": "element",
+  "tagName": "span",
+  "properties": {
+    "className": []
+  },
+  "children": [
+    {
+      "type": "text",
+      "value": "\n"
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "source",
+          "ts"
+        ]
+      },
+      "children": [
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "storage",
+              "type",
+              "function"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "function"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "entity",
+              "name",
+              "function"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "foo"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "parameters",
+              "begin",
+              "bracket",
+              "round"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "("
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "parameters",
+              "end",
+              "bracket",
+              "round"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "function",
+              "body",
+              "begin",
+              "bracket",
+              "curly"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "{"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n  "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "keyword",
+              "control"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "return"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "constant",
+              "numeric"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "terminator",
+              "statement",
+              "semicolon"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ";"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n"
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "function",
+              "body",
+              "end",
+              "bracket",
+              "curly"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
