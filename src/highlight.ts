@@ -21,9 +21,6 @@ function convertSexp<T>(
   return print(sexp);
 }
 
-/**
- * 
- */
 export function highlightTree(scopeMappings: any, text: string, tree: Tree): Element | Text {
   const full = fullSexp(text, tree);
   const highlight = highlightSexpFromScopes(full, scopeMappings);
@@ -41,6 +38,10 @@ export function highlightTree(scopeMappings: any, text: string, tree: Tree): Ele
       };
     },
     value => ({type: 'text', value}));
+}
+
+function isParser(p: PreparedLanguage | Parser): p is Parser {
+  return !!(p as Parser).parse;
 }
 
 /**
@@ -63,7 +64,7 @@ export function highlightText(arg1: PreparedLanguage | Parser, arg2: any, arg3?:
 
   // Extract arguments
   const {parser, scopeMappings, text} = (() => {
-    if (arg1 instanceof Parser) {
+    if (isParser(arg1)) {
       if (arg3)
         return {parser: arg1, scopeMapping: arg2, text: arg3};
     } else if (arg1.grammar && arg1.scopeMappings && typeof arg2 === 'string') {
