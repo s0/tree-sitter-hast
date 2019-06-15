@@ -54,6 +54,16 @@ export async function loadLanguagesFromPackage(packageName: string): Promise<Pre
   // Determine the location of the language package
   const lookup_paths = require.resolve.paths(`${packageName}/grammars/`);
   if (!lookup_paths) throw new Error('error resolving paths');
+  // Add the lookup paths of the main module too
+  // Required for when package symlinks are used
+  // (add these to the start though so they are used first)
+  if (require.main) {
+    for (let i = require.main.paths.length - 1; i > 0; i--) {
+      const path = require.main.paths[i];
+      if (lookup_paths.indexOf(path) === -1)
+        lookup_paths.unshift(path);
+    }
+  }
   let packageDir: string | null = null;
   for (const lookup of lookup_paths) {
     const p = path.join(lookup, packageName);
@@ -63,7 +73,6 @@ export async function loadLanguagesFromPackage(packageName: string): Promise<Pre
     }
   }
   if (!packageDir) throw new Error(`could not find package: ${packageName}`);
-  console.log(packageDir);
 
   // Get list of grammars
   const grammarsDir = path.join(packageDir, 'grammars');
@@ -71,12 +80,12 @@ export async function loadLanguagesFromPackage(packageName: string): Promise<Pre
     Promise.reject(new Error(`Package ${packageName} is not a valid atom language package`)));
   for (const filename of files) {
     const match = TREE_SITTER_SPEC_FILENAME.exec(filename);
-    console.log(filename, match);
     if (match) {
       const lang = match[1];
       const spec = await loadCson(path.join(grammarsDir, filename));
       if (isTreeSitterAtomSpec(spec)) {
-        const grammar = require(spec.parser);
+        const grammarPath = require.resolve(spec.parser, {paths: lookup_paths});
+        const grammar = require(grammarPath);
         langs.set(lang, {
           grammar, scopeMappings: spec.scopes
         });
