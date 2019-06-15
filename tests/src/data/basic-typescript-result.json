@@ -9,23 +9,29 @@
     {
       "type": "element",
       "tagName": "span",
+      "properties": {
+        "className": [
+          "source",
+          "ts"
+        ]
+      },
       "children": [
         {
           "type": "element",
           "tagName": "span",
-          "children": [
-            {
-              "type": "text",
-              "value": "function"
-            }
-          ],
           "properties": {
             "className": [
               "storage",
               "type",
               "function"
             ]
-          }
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "function"
+            }
+          ]
         },
         {
           "type": "text",
@@ -34,29 +40,23 @@
         {
           "type": "element",
           "tagName": "span",
-          "children": [
-            {
-              "type": "text",
-              "value": "foo"
-            }
-          ],
           "properties": {
             "className": [
               "entity",
               "name",
               "function"
             ]
-          }
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "foo"
+            }
+          ]
         },
         {
           "type": "element",
           "tagName": "span",
-          "children": [
-            {
-              "type": "text",
-              "value": "("
-            }
-          ],
           "properties": {
             "className": [
               "punctuation",
@@ -66,17 +66,17 @@
               "bracket",
               "round"
             ]
-          }
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "("
+            }
+          ]
         },
         {
           "type": "element",
           "tagName": "span",
-          "children": [
-            {
-              "type": "text",
-              "value": ")"
-            }
-          ],
           "properties": {
             "className": [
               "punctuation",
@@ -86,7 +86,13 @@
               "bracket",
               "round"
             ]
-          }
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ")"
+            }
+          ]
         },
         {
           "type": "text",
@@ -95,12 +101,6 @@
         {
           "type": "element",
           "tagName": "span",
-          "children": [
-            {
-              "type": "text",
-              "value": "{"
-            }
-          ],
           "properties": {
             "className": [
               "punctuation",
@@ -111,7 +111,13 @@
               "bracket",
               "curly"
             ]
-          }
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "{"
+            }
+          ]
         },
         {
           "type": "text",
@@ -120,18 +126,18 @@
         {
           "type": "element",
           "tagName": "span",
-          "children": [
-            {
-              "type": "text",
-              "value": "return"
-            }
-          ],
           "properties": {
             "className": [
               "keyword",
               "control"
             ]
-          }
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "return"
+            }
+          ]
         },
         {
           "type": "text",
@@ -140,28 +146,22 @@
         {
           "type": "element",
           "tagName": "span",
-          "children": [
-            {
-              "type": "text",
-              "value": "1"
-            }
-          ],
           "properties": {
             "className": [
               "constant",
               "numeric"
             ]
-          }
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "1"
+            }
+          ]
         },
         {
           "type": "element",
           "tagName": "span",
-          "children": [
-            {
-              "type": "text",
-              "value": ";"
-            }
-          ],
           "properties": {
             "className": [
               "punctuation",
@@ -169,7 +169,13 @@
               "statement",
               "semicolon"
             ]
-          }
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ";"
+            }
+          ]
         },
         {
           "type": "text",
@@ -178,12 +184,6 @@
         {
           "type": "element",
           "tagName": "span",
-          "children": [
-            {
-              "type": "text",
-              "value": "}"
-            }
-          ],
           "properties": {
             "className": [
               "punctuation",
@@ -194,15 +194,15 @@
               "bracket",
               "curly"
             ]
-          }
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "}"
+            }
+          ]
         }
-      ],
-      "properties": {
-        "className": [
-          "source",
-          "ts"
-        ]
-      }
+      ]
     }
   ]
 }

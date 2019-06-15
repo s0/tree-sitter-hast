@@ -24,19 +24,30 @@ function convertSexp<T>(
 export function highlightTree(scopeMappings: any, text: string, tree: Tree): Element | Text {
   const full = fullSexp(text, tree);
   const highlight = highlightSexpFromScopes(full, scopeMappings);
-  return convertSexp<Element | Text>(
+  const sexp = convertSexp<(Element | Text)[]>(
     highlight.sexp,
     (name, children) => {
+      const flattenedChildren = ([] as (Element | Text)[]).concat(...children);
       const className = name.split('.').slice(1);
-      const hast: Element = {
+      // Collapse if no classes will be applied
+      if (className.length === 0) return flattenedChildren;
+      return [{
         type: 'element',
         tagName: 'span',
-        children
-      };
-      if (className.length > 0) hast.properties = { className };
-      return hast;
+        properties: {
+          className
+        },
+        children: flattenedChildren
+      }];
     },
-    value => ({type: 'text', value}));
+    value => [{type: 'text', value}]);
+  if (sexp.length === 1)
+    return sexp[0];
+  return {
+    type: 'element',
+    tagName: 'span',
+    children: sexp
+  };
 }
 
 function isParser(p: PreparedLanguage | Parser): p is Parser {
