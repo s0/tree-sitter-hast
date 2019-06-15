@@ -31,7 +31,6 @@
     "build": "gulp"
   },
   "dependencies": {
-    "@atom-languages/language-typescript": "^0.5.0",
     "@types/unist": "^2.0.3",
     "highlight-tree-sitter": "^1.0.0",
     "season": "^6.0.2",

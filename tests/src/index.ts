@@ -1,7 +1,6 @@
 import * as Parser from 'tree-sitter';
 
-import {loadLanguagesFromPackage} from './prepare-language';
-import {highlightTree} from './highlight';
+import {loadLanguagesFromPackage, highlightTree} from 'tree-sitter-hast';
 
 (async () => {
   const langs = await loadLanguagesFromPackage('@atom-languages/language-typescript');
