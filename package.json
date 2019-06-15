@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-hast",
   "version": "0.0.2",
-  "description": "Convert tree-sitter parsed trees to HAST",
+  "description": "Convert tree-sitter parsed trees to syntax-highlighted HAST",
   "license": "MIT",
   "main": "index.js",
   "types": "index.d.js",
