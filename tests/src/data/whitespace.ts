@@ -16,5 +16,4 @@ foo()
 `;
 /* tslint:enable:no-trailing-whitespace */
 
-/* tslint:disable:quotemark */
-export const result = {};
+export const result = 'whitespace-result.json';

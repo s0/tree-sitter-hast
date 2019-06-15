@@ -14,7 +14,8 @@
   },
   "scripts": {
     "auto-install": "yarn install; git checkout node_modules",
-    "test": "gulp; mocha --opts mocha.opts"
+    "test": "gulp; mocha --opts mocha.opts",
+    "test-fix": "TEST_FIX=true mocha --opts mocha.opts"
   },
   "dependencies": {
     "@atom-languages/language-typescript": "^0.5.0",

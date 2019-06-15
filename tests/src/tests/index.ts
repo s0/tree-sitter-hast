@@ -1,12 +1,19 @@
 import * as assert from 'assert';
+import * as fs from 'fs';
+import * as path from 'path';
 import * as Parser from 'tree-sitter';
+import {promisify} from 'util';
+
+import {loadLanguagesFromPackage, highlightTree} from 'tree-sitter-hast';
 
 import * as basicTypescript from '../data/basic-typescript';
 import * as typescript from '../data/typescript';
 import * as whitespace from '../data/whitespace';
 
-import {loadLanguagesFromPackage, highlightTree} from 'tree-sitter-hast';
+const readFile = promisify(fs.readFile);
+const writeFile = promisify(fs.writeFile);
 
+const DATA_DIR = path.join(path.dirname(path.dirname(__dirname)), 'src', 'data');
 const TEST_CASES = [
   basicTypescript,
   typescript,
@@ -27,12 +34,21 @@ describe('main tests', () => {
       const tree = parser.parse(testCase.text);
       const highlighted = highlightTree(lang.scopeMappings, testCase.text, tree);
 
+      // Load expected result
+      const jsonPath = path.join(DATA_DIR, testCase.result);
+      const json = await readFile(jsonPath, 'utf8');
+      const expected = JSON.parse(json);
+
       try {
-        assert.deepEqual(testCase.result, highlighted);
+        assert.deepEqual(highlighted, expected);
       } catch (e) {
-        // Uncomment to print out actual result
-        console.log(JSON.stringify(highlighted, null, 2));
-        throw e;
+        if (process.env.TEST_FIX === 'true') {
+          const newJson = JSON.stringify(highlighted, null, 2);
+          await writeFile(jsonPath, newJson);
+          throw new Error(`Result Unexpected, written new contents to ${jsonPath}`);
+        } else {
+          throw e;
+        }
       }
     });
   }

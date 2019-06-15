@@ -19,5 +19,4 @@ class Node {
 }
 `;
 
-/* tslint:disable:quotemark */
-export const result = {};
+export const result = 'typescript-result.json';

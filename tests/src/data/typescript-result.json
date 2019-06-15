@@ -1,0 +1,714 @@
+{
+  "type": "element",
+  "tagName": "span",
+  "properties": {
+    "className": []
+  },
+  "children": [
+    {
+      "type": "text",
+      "value": "\n"
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "source",
+          "ts"
+        ]
+      },
+      "children": [
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "storage",
+              "type"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "class"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "support",
+              "storage",
+              "type"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Node"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "function",
+              "body",
+              "begin",
+              "bracket",
+              "curly"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "{"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n  "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "variable",
+              "other",
+              "object",
+              "property"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "value"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "keyword",
+              "operator",
+              "js"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ":"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "support",
+              "storage",
+              "type"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "string"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "terminator",
+              "statement",
+              "semicolon"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ";"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n\n  "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "entity",
+              "name",
+              "function"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "constructor"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "parameters",
+              "begin",
+              "bracket",
+              "round"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "("
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "value"
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "keyword",
+              "operator",
+              "js"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ":"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "support",
+              "storage",
+              "type"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "string"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "meta",
+              "delimiter",
+              "comma"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ","
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " height"
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "keyword",
+              "operator",
+              "js"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ":"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "support",
+              "storage",
+              "type"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "number"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "parameters",
+              "end",
+              "bracket",
+              "round"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "function",
+              "body",
+              "begin",
+              "bracket",
+              "curly"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "{"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n    this"
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "meta",
+              "delimiter",
+              "period"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "variable",
+              "other",
+              "object",
+              "property"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "value"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "keyword",
+              "operator",
+              "js"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "="
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " value"
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "terminator",
+              "statement",
+              "semicolon"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ";"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n  "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "function",
+              "body",
+              "end",
+              "bracket",
+              "curly"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "}"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n\n  "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "entity",
+              "name",
+              "function"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "getValue"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "parameters",
+              "begin",
+              "bracket",
+              "round"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "("
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "parameters",
+              "end",
+              "bracket",
+              "round"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "keyword",
+              "operator",
+              "js"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ":"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "support",
+              "storage",
+              "type"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "string"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "function",
+              "body",
+              "begin",
+              "bracket",
+              "curly"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "{"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n    "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "keyword",
+              "control"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "return"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " this"
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "meta",
+              "delimiter",
+              "period"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "variable",
+              "other",
+              "object",
+              "property"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "value"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "terminator",
+              "statement",
+              "semicolon"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ";"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n  "
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "function",
+              "body",
+              "end",
+              "bracket",
+              "curly"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "}"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n"
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "function",
+              "body",
+              "end",
+              "bracket",
+              "curly"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "}"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n"
+        }
+      ]
+    }
+  ]
+}

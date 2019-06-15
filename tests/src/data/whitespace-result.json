@@ -1,0 +1,86 @@
+{
+  "type": "element",
+  "tagName": "span",
+  "properties": {
+    "className": []
+  },
+  "children": [
+    {
+      "type": "text",
+      "value": "\n\n  \n\n"
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "source",
+          "ts"
+        ]
+      },
+      "children": [
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "entity",
+              "name",
+              "function"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "foo"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "parameters",
+              "begin",
+              "bracket",
+              "round"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "("
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tagName": "span",
+          "properties": {
+            "className": [
+              "punctuation",
+              "definition",
+              "parameters",
+              "end",
+              "bracket",
+              "round"
+            ]
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n    \n\n"
+        }
+      ]
+    }
+  ]
+}
