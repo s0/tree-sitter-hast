@@ -133,12 +133,15 @@ treeSitterHast
 ```
 
 **Output:**
-```
+```json
 {
   "type": "element",
   "tagName": "span",
   "properties": {
-    "className": []
+    "className": [
+      "source",
+      "ts"
+    ]
   },
   "children": [
     {
@@ -146,30 +149,22 @@ treeSitterHast
       "tagName": "span",
       "properties": {
         "className": [
-          "source",
-          "ts"
+          "storage",
+          "type"
         ]
       },
       "children": [
         {
-          "type": "element",
-          "tagName": "span",
-          "properties": {
-            "className": [
-              "storage",
-              "type"
-            ]
-          },
-          "children": [
-            {
-              "type": "text",
-              "value": "let"
-            }
-          ]
-        },
-        ...
+          "type": "text",
+          "value": "let"
+        }
       ]
-    }
+    },
+    {
+      "type": "text",
+      "value": " v "
+    },
+    //...
   ]
 }
 ```
@@ -206,7 +201,7 @@ treeSitterHast
 
 **Output:**
 ```html
-<span class=""><span class="source ts"><span class="storage type">let</span> v <span class="keyword operator js">=</span> <span class="constant numeric">3</span></span></span>
+<span class="source ts"><span class="storage type">let</span> v <span class="keyword operator js">=</span> <span class="constant numeric">3</span></span>
 ```
 
 ## TODO
