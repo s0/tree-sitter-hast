@@ -83,6 +83,10 @@ export async function loadLanguagesFromPackage(packageName: string): Promise<Pre
     if (match) {
       const lang = match[1];
       const spec = await loadCson(path.join(grammarsDir, filename));
+
+      // Go through spec, and patch regexes
+      patchRegexes(spec);
+
       if (isTreeSitterAtomSpec(spec)) {
         const grammarPath = require.resolve(spec.parser, {paths: lookup_paths});
         const grammar = require(grammarPath);
@@ -96,4 +100,19 @@ export async function loadLanguagesFromPackage(packageName: string): Promise<Pre
   }
 
   return langs;
+}
+
+// TODO: move this into highlight-tree-sitter
+function patchRegexes(value: unknown) {
+  if (value instanceof Object) {
+    for (const key of Object.keys(value)) {
+      patchRegexes(value[key]);
+    }
+    const v = value as {
+      match?: string | RegExp;
+    };
+    if (typeof v.match === 'string') {
+      v.match = new RegExp(v.match);
+    }
+  }
 }
