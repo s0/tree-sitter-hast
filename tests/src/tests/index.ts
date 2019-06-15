@@ -8,15 +8,29 @@ import {loadLanguagesFromPackage, highlightText, highlightTree} from 'tree-sitte
 
 import * as basicTypescript from '../data/basic-typescript';
 import * as typescript from '../data/typescript';
+import * as typescriptWhitelist from '../data/typescript-whitelist';
 import * as whitespace from '../data/whitespace';
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
 const DATA_DIR = path.join(path.dirname(path.dirname(__dirname)), 'src', 'data');
-const TEST_CASES = [
+
+interface TestCase {
+  name: string;
+  language: {
+    package: string;
+    lang: string;
+  };
+  text: string;
+  result: string;
+  classWhitelist?: string[];
+}
+
+const TEST_CASES: TestCase[] = [
   basicTypescript,
   typescript,
+  typescriptWhitelist,
   whitespace
 ];
 
@@ -67,7 +81,7 @@ describe('main tests', () => {
       parser.setLanguage(lang.grammar);
 
       const tree = parser.parse(testCase.text);
-      const highlighted = highlightTree(lang.scopeMappings, testCase.text, tree);
+      const highlighted = highlightTree(lang.scopeMappings, testCase.text, tree, {classWhitelist: testCase.classWhitelist});
 
       // Load expected result
       const jsonPath = path.join(DATA_DIR, testCase.result);

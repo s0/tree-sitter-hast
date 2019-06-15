@@ -1,0 +1,417 @@
+{
+  "type": "element",
+  "tagName": "span",
+  "children": [
+    {
+      "type": "text",
+      "value": "\n"
+    },
+    {
+      "type": "text",
+      "value": "class"
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "text",
+      "value": "Node"
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "function"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "{"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "\n  "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "variable"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "value"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "keyword"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "text",
+      "value": "string"
+    },
+    {
+      "type": "text",
+      "value": ";"
+    },
+    {
+      "type": "text",
+      "value": "\n\n  "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "function"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "constructor"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "("
+    },
+    {
+      "type": "text",
+      "value": "value"
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "keyword"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "text",
+      "value": "string"
+    },
+    {
+      "type": "text",
+      "value": ","
+    },
+    {
+      "type": "text",
+      "value": " height"
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "keyword"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "text",
+      "value": "number"
+    },
+    {
+      "type": "text",
+      "value": ")"
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "function"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "{"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "\n    this"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "variable"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "value"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "keyword"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "="
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": " value"
+    },
+    {
+      "type": "text",
+      "value": ";"
+    },
+    {
+      "type": "text",
+      "value": "\n  "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "function"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "}"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "\n\n  "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "function"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "getValue"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "("
+    },
+    {
+      "type": "text",
+      "value": ")"
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "keyword"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "text",
+      "value": "string"
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "function"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "{"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "\n    "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "keyword"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "return"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": " this"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "variable"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "value"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": ";"
+    },
+    {
+      "type": "text",
+      "value": "\n  "
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "function"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "}"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "\n"
+    },
+    {
+      "type": "element",
+      "tagName": "span",
+      "properties": {
+        "className": [
+          "function"
+        ]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "}"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "\n"
+    }
+  ]
+}

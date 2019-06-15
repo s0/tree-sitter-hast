@@ -11,4 +11,4 @@ function foo() {
 }`;
 
 /* tslint:disable:quotemark */
-export const result = 'basic-typescript-result.json';
+export const result = 'basic-typescript.json';

@@ -16,4 +16,4 @@ foo()
 `;
 /* tslint:enable:no-trailing-whitespace */
 
-export const result = 'whitespace-result.json';
+export const result = 'whitespace.json';

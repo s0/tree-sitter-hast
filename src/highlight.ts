@@ -21,14 +21,30 @@ function convertSexp<T>(
   return print(sexp);
 }
 
-export function highlightTree(scopeMappings: any, text: string, tree: Tree): Element | Text {
+export interface HighlightingOptions {
+  /**
+   * If specified, only the classes in the given whitelist will be used and output.
+   *
+   * Use this to reduce the output when only certain classes are styled.
+   */
+  classWhitelist?: string[];
+}
+
+export function highlightTree(
+    scopeMappings: any,
+    text: string,
+    tree: Tree,
+    options?: HighlightingOptions): Element | Text {
+  const classWhitelist = options ? options.classWhitelist : null;
   const full = fullSexp(text, tree);
   const highlight = highlightSexpFromScopes(full, scopeMappings);
   const sexp = convertSexp<(Element | Text)[]>(
     highlight.sexp,
     (name, children) => {
       const flattenedChildren = ([] as (Element | Text)[]).concat(...children);
-      const className = name.split('.').slice(1);
+      const className = name.split('.').slice(1)
+        // Only include classes if there is no whitelist, or the class is in the whitelist
+        .filter(name => !classWhitelist || classWhitelist.indexOf(name) !== -1);
       // Collapse if no classes will be applied
       if (className.length === 0) return flattenedChildren;
       return [{
@@ -59,32 +75,35 @@ function isParser(p: PreparedLanguage | Parser): p is Parser {
  *
  * @param language a PreparedLanguage returned by loadLanguagesFromPackage()
  * @param text the plaintext to highlight
+ * @param options optional options for highlighting
  */
-export function highlightText(language: PreparedLanguage, text: string): Element | Text;
+export function highlightText(language: PreparedLanguage, text: string, options?: HighlightingOptions): Element | Text;
 /**
  * Highlight the given text and return the HAST
  *
  * @param parser an active Parser with the language already set
  * @param scopeMappings the atom scope mappings for the language used in the given parser
  * @param text the plaintext to highlight
+ * @param options optional options for highlighting
  */
-export function highlightText(parser: Parser, scopeMappings: any, text: string): Element | Text;
+export function highlightText(parser: Parser, scopeMappings: any, text: string, options?: HighlightingOptions): Element | Text;
 
-export function highlightText(arg1: PreparedLanguage | Parser, arg2: any, arg3?: string) {
+export function highlightText(arg1: PreparedLanguage | Parser, arg2: any, arg3?: string | HighlightingOptions, arg4?: HighlightingOptions) {
 
   // Extract arguments
-  const {parser, scopeMappings, text} = (() => {
+  const {parser, scopeMappings, text, options} = (() => {
     if (isParser(arg1)) {
-      if (arg3)
-        return {parser: arg1, scopeMappings: arg2, text: arg3};
+      if (typeof arg3 === 'string')
+        return {parser: arg1, scopeMappings: arg2, text: arg3, options: arg4};
     } else if (arg1.grammar && arg1.scopeMappings && typeof arg2 === 'string') {
       const parser = new Parser();
       parser.setLanguage(arg1.grammar);
-      return {parser, scopeMappings: arg1.scopeMappings, text: arg2};
+      const options = typeof arg3 === 'string' ? undefined : arg3;
+      return {parser, scopeMappings: arg1.scopeMappings, text: arg2, options};
     }
     throw new Error('Invalid arguments to highlightText()');
   })();
 
   const tree = parser.parse(text);
-  return highlightTree(scopeMappings, text, tree);
+  return highlightTree(scopeMappings, text, tree, options);
 }

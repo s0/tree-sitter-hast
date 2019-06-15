@@ -1,9 +1,13 @@
-export const name = 'Typescript';
+export const name = 'Typescript with Class Whitelist';
 
 export const language = {
   package: '@atom-languages/language-typescript',
   lang: 'typescript'
 };
+
+export const classWhitelist = [
+  'function', 'variable', 'keyword'
+];
 
 export const text = `
 class Node {
@@ -19,4 +23,4 @@ class Node {
 }
 `;
 
-export const result = 'typescript.json';
+export const result = 'typescript-whitelist.json';
