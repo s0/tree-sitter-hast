@@ -9,6 +9,7 @@ import {loadLanguagesFromPackage, highlightText, highlightTree} from 'tree-sitte
 import * as basicTypescript from '../data/basic-typescript';
 import * as typescript from '../data/typescript';
 import * as typescriptWhitelist from '../data/typescript-whitelist';
+import * as typescriptWhitelistEmpty from '../data/typescript-whitelist-empty';
 import * as whitespace from '../data/whitespace';
 
 const readFile = promisify(fs.readFile);
@@ -31,6 +32,7 @@ const TEST_CASES: TestCase[] = [
   basicTypescript,
   typescript,
   typescriptWhitelist,
+  typescriptWhitelistEmpty,
   whitespace
 ];
 

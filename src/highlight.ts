@@ -41,19 +41,32 @@ export function highlightTree(
   const sexp = convertSexp<(Element | Text)[]>(
     highlight.sexp,
     (name, children) => {
-      const flattenedChildren = ([] as (Element | Text)[]).concat(...children);
+      const mergedChildren: (Element | Text)[] = [];
+      // Flatten list of children, and merge adjacent text nodes together
+      let currentText: Text | null = null;
+      for (const child of ([] as (Element | Text)[]).concat(...children)) {
+        if (child.type === 'text') {
+          if (!currentText)
+            mergedChildren.push(currentText = {type: 'text', value: ''});
+          currentText.value += child.value;
+        } else {
+          currentText = null;
+          mergedChildren.push(child);
+        }
+      }
+      // Construct the class for the current element
       const className = name.split('.').slice(1)
         // Only include classes if there is no whitelist, or the class is in the whitelist
         .filter(name => !classWhitelist || classWhitelist.indexOf(name) !== -1);
       // Collapse if no classes will be applied
-      if (className.length === 0) return flattenedChildren;
+      if (className.length === 0) return mergedChildren;
       return [{
         type: 'element',
         tagName: 'span',
         properties: {
           className
         },
-        children: flattenedChildren
+        children: mergedChildren
       }];
     },
     value => [{type: 'text', value}]);

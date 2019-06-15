@@ -1,0 +1,4 @@
+{
+  "type": "text",
+  "value": "\nclass Node {\n  value: string;\n\n  constructor(value: string, height: number) {\n    this.value = value;\n  }\n\n  getValue(): string {\n    return this.value;\n  }\n}\n"
+}

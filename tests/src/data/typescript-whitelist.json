@@ -4,23 +4,7 @@
   "children": [
     {
       "type": "text",
-      "value": "\n"
-    },
-    {
-      "type": "text",
-      "value": "class"
-    },
-    {
-      "type": "text",
-      "value": " "
-    },
-    {
-      "type": "text",
-      "value": "Node"
-    },
-    {
-      "type": "text",
-      "value": " "
+      "value": "\nclass Node "
     },
     {
       "type": "element",
@@ -73,19 +57,7 @@
     },
     {
       "type": "text",
-      "value": " "
-    },
-    {
-      "type": "text",
-      "value": "string"
-    },
-    {
-      "type": "text",
-      "value": ";"
-    },
-    {
-      "type": "text",
-      "value": "\n\n  "
+      "value": " string;\n\n  "
     },
     {
       "type": "element",
@@ -104,11 +76,7 @@
     },
     {
       "type": "text",
-      "value": "("
-    },
-    {
-      "type": "text",
-      "value": "value"
+      "value": "(value"
     },
     {
       "type": "element",
@@ -127,19 +95,7 @@
     },
     {
       "type": "text",
-      "value": " "
-    },
-    {
-      "type": "text",
-      "value": "string"
-    },
-    {
-      "type": "text",
-      "value": ","
-    },
-    {
-      "type": "text",
-      "value": " height"
+      "value": " string, height"
     },
     {
       "type": "element",
@@ -158,19 +114,7 @@
     },
     {
       "type": "text",
-      "value": " "
-    },
-    {
-      "type": "text",
-      "value": "number"
-    },
-    {
-      "type": "text",
-      "value": ")"
-    },
-    {
-      "type": "text",
-      "value": " "
+      "value": " number) "
     },
     {
       "type": "element",
@@ -189,11 +133,7 @@
     },
     {
       "type": "text",
-      "value": "\n    this"
-    },
-    {
-      "type": "text",
-      "value": "."
+      "value": "\n    this."
     },
     {
       "type": "element",
@@ -231,15 +171,7 @@
     },
     {
       "type": "text",
-      "value": " value"
-    },
-    {
-      "type": "text",
-      "value": ";"
-    },
-    {
-      "type": "text",
-      "value": "\n  "
+      "value": " value;\n  "
     },
     {
       "type": "element",
@@ -277,11 +209,7 @@
     },
     {
       "type": "text",
-      "value": "("
-    },
-    {
-      "type": "text",
-      "value": ")"
+      "value": "()"
     },
     {
       "type": "element",
@@ -300,15 +228,7 @@
     },
     {
       "type": "text",
-      "value": " "
-    },
-    {
-      "type": "text",
-      "value": "string"
-    },
-    {
-      "type": "text",
-      "value": " "
+      "value": " string "
     },
     {
       "type": "element",
@@ -346,11 +266,7 @@
     },
     {
       "type": "text",
-      "value": " this"
-    },
-    {
-      "type": "text",
-      "value": "."
+      "value": " this."
     },
     {
       "type": "element",
@@ -369,11 +285,7 @@
     },
     {
       "type": "text",
-      "value": ";"
-    },
-    {
-      "type": "text",
-      "value": "\n  "
+      "value": ";\n  "
     },
     {
       "type": "element",
