@@ -1,11 +1,18 @@
+/**
+ * Load grammars and scopeMappings from atom language packages
+ */
+import * as fs from 'fs';
+import * as path from 'path';
 import {promisify} from 'util';
-import * as sass from 'node-sass';
+import * as cson from 'season';
 
-import * as Parser from 'tree-sitter';
-import * as css from 'tree-sitter-css';
-import { createSecureServer } from 'http2';
+const exists = promisify(fs.exists);
+const readdir = promisify(fs.readdir);
+const loadCson = promisify(cson.readFile);
 
 type ScopeMappings = {[selector: string]: string};
+
+const TREE_SITTER_SPEC_FILENAME = /^tree-sitter-(.*)\.cson$/;
 
 export interface PreparedLanguage {
   /**
@@ -23,63 +30,61 @@ export interface PreparedLanguage {
   scopeMappings?: ScopeMappings;
 }
 
-/**
- * Load the grammar and scope mappings from an NPM package like "tree-sitter-javascript"
- * @param packageName
- */
-export async function loadLanguageFromPackage(packageName: string): Promise<PreparedLanguage> {
-  const lang: PreparedLanguage = {
-    grammar: null
-  };
+export type PreparedLanguages = Map<string, PreparedLanguage>;
 
-  lang.grammar = require(packageName);
-
-  // Try and load the scope mappings
-  const mappingPath = require.resolve(`${packageName}/properties/highlights.css`);
-  const parsedSASS = await promisify(sass.render)({
-    file: mappingPath
-  });
-
-  // Parce css with tree-sitter ¯\_(ツ)_/¯
-  const cssParser = new Parser();
-  cssParser.setLanguage(css);
-  cssParser.parse(parsedSASS.css.toString());
-  const parsedCSS = cssParser.parse(parsedSASS.css.toString());
-  lang.scopeMappings = treeSitterCSSToMap(parsedCSS);
-
-  return lang;
+interface TreeSitterAtomSpec {
+  parser: string;
+  scopes: any;
 }
 
-function treeSitterCSSToMap(tree: Parser.Tree): ScopeMappings {
-  const map: ScopeMappings = {};
-  const cursor = tree.walk();
+function isTreeSitterAtomSpec(value: unknown): value is TreeSitterAtomSpec {
+  return (
+    typeof (value as TreeSitterAtomSpec).parser === 'string' &&
+    !!(value as TreeSitterAtomSpec).scopes
+  );
+}
 
-  const node = () => cursor.currentNode;
+/**
+ * Load the grammar and scope mappings from an APM (atom) package like "language-javascript"
+ * @param packageName
+ */
+export async function loadLanguagesFromPackage(packageName: string): Promise<PreparedLanguages> {
+  const langs = new Map<string, PreparedLanguage>();
 
-  if (node().type === 'stylesheet') {
-    cursor.gotoFirstChild();
-    while (true) {
-      if (node().type === 'rule_set') {
-        // Extract selectors
-        const selectors: string[] = [];
-        cursor.gotoFirstChild();
-        if (cursor.gotoFirstChild()) {
-          while (true) {
-            if (node().type !== '') {
-              console.log(node().type, node().text);
-            }
-            if (!cursor.gotoNextSibling()) break;
-          }
-          cursor.gotoParent();
-        }
-        cursor.gotoNextSibling();
+  // Determine the location of the language package
+  const lookup_paths = require.resolve.paths(`${packageName}/grammars/`);
+  if (!lookup_paths) throw new Error('error resolving paths');
+  let packageDir: string | null = null;
+  for (const lookup of lookup_paths) {
+    const p = path.join(lookup, packageName);
+    if (await exists(p)) {
+      packageDir = p;
+      break;
+    }
+  }
+  if (!packageDir) throw new Error(`could not find package: ${packageName}`);
+  console.log(packageDir);
 
-        console.log(node());
-        cursor.gotoParent();
+  // Get list of grammars
+  const grammarsDir = path.join(packageDir, 'grammars');
+  const files = await readdir(grammarsDir).catch(() =>
+    Promise.reject(new Error(`Package ${packageName} is not a valid atom language package`)));
+  for (const filename of files) {
+    const match = TREE_SITTER_SPEC_FILENAME.exec(filename);
+    console.log(filename, match);
+    if (match) {
+      const lang = match[1];
+      const spec = await loadCson(path.join(grammarsDir, filename));
+      if (isTreeSitterAtomSpec(spec)) {
+        const grammar = require(spec.parser);
+        langs.set(lang, {
+          grammar, scopeMappings: spec.scopes
+        });
+      } else {
+        throw new Error(`Invalid language specification for ${lang} in ${packageName}`);
       }
-      if (!cursor.gotoNextSibling()) break;
     }
   }
 
-  return map;
+  return langs;
 }

@@ -1,10 +1,13 @@
 import { fullSexp, _flattenSexp, highlightSexpFromScopes, printSexp } from 'highlight-tree-sitter';
 import * as Parser from 'tree-sitter';
 
-import {loadLanguageFromPackage} from './prepare-language';
+import {loadLanguagesFromPackage} from './prepare-language';
 
 (async () => {
-  const lang = await loadLanguageFromPackage('tree-sitter-javascript');
+  const langs = await loadLanguagesFromPackage('@atom-languages/language-typescript');
+
+  const lang = langs.get('typescript');
+  if (!lang) return;
 
   const parser = new Parser();
   parser.setLanguage(lang.grammar);
