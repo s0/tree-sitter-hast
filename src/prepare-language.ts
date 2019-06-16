@@ -52,8 +52,7 @@ export async function loadLanguagesFromPackage(packageName: string): Promise<Pre
   const langs = new Map<string, PreparedLanguage>();
 
   // Determine the location of the language package
-  const lookup_paths = require.resolve.paths(`${packageName}/grammars/`);
-  if (!lookup_paths) throw new Error('error resolving paths');
+  const lookup_paths = module.paths;
   // Add the lookup paths of the main module too
   // Required for when package symlinks are used
   // (add these to the start though so they are used first)
