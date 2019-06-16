@@ -11,11 +11,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    yarn --cwd external/composer/external/core install
-    yarn --cwd external/composer/external/core run build
-  displayName: 'build dependency: core'
-
-- script: |
     yarn install
     yarn run build
   displayName: 'run build'
