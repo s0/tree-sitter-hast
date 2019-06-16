@@ -2,6 +2,7 @@
   "name": "tree-sitter-hast",
   "version": "1.1.0",
   "description": "Convert tree-sitter parsed trees to syntax-highlighted HAST",
+  "keywords": ["syntax-tree", "unist", "tree-sitter", "syntax-highlighting"],
   "license": "MIT",
   "main": "index.js",
   "types": "index.d.js",
