@@ -239,7 +239,6 @@ treeSitterHast
 ## TODO
 
 * Move prepare-language.ts over to highlight-tree-sitter
-* Flesh out documentation
 * Pull out HAST type definitions into own repo (DefinitelyTyped?)
 * Update highlight-tree-sitter to not produce HTML when not needed
 * Move over matches patch to highlight-tree-sitter
